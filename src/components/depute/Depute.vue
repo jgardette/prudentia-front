@@ -6,10 +6,29 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'depute',
-  props: {
-    deputeInfo: Object
+  data () {
+    return {
+      deputeInfo: {
+        default: this.getDepute()
+      }
+    }
+  },
+  methods: {
+    getDepute () {
+      const DeputeCode = this.$route.params.code
+      axios.get(`http://localhost:8080/depute/${DeputeCode}`)
+        .then(response => {
+          // JSON responses are automatically parsed.
+          this.deputeInfo = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    }
   }
 }
 </script>

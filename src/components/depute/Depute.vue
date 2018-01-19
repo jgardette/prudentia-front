@@ -1,15 +1,40 @@
 <template>
   <div class="depute">
-    <h1>{{ deputeInfo.prenom }} {{ deputeInfo.nom }}</h1>
-    <h2>description</h2>
+    <h1>{{ deputeInfo.civilite }} {{ deputeInfo.prenom }} {{ deputeInfo.nom }}</h1>
+    <h3>{{ deputeInfo.professionLibelle }}</h3>
+    <ul>
+      <li>
+        Date de naissance : {{ deputeInfo.dateNaissance | formatDate }}
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Ville de naissance : {{ deputeInfo.villeNais }}
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Département de naissance : {{ deputeInfo.departementNaissance }}
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Pays de naissance : {{ deputeInfo.paysNaissance }}
+      </li>
+    </ul>
+    <h2>Adresses</h2>
+    <depute-adresse v-for="adresse in deputeInfo.adresses" v-bind:adresse="adresse" v-bind:key="adresse.intitule"></depute-adresse>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import DeputeAdresse from './DeputeAdresses.vue'
+import * as moment from 'moment'
 
 export default {
-  name: 'depute',
+  components: {DeputeAdresse},
+  name: 'Depute',
   data () {
     return {
       deputeInfo: {
@@ -28,6 +53,11 @@ export default {
         .catch(e => {
           this.errors.push(e)
         })
+    }
+  },
+  filters: {
+    formatDate (date) {
+      return moment(date).format('DD/MM/YYYY')
     }
   }
 }

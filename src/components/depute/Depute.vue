@@ -57,7 +57,7 @@ export default {
   },
   filters: {
     formatDate (date) {
-      return moment(date).format('DD/MM/YYYY')
+
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="depute-adresse">
-    <h3 v-if="adresse.intitule">{{ adresse.intitule}}</h3>
+  <div class="DeputeAdresse">
+    <h3 v-if="adresse.intitule">{{ adresse.intitule }}</h3>
     <ul>
       <li v-if="adresse.nomRue">
         Adresse : {{ adresse.numeroRue }} {{ adresse.nomRue }} {{ adresse.codePostal }} {{ adresse.ville }}
@@ -21,8 +21,9 @@
 
 <script>
 export default {
-  name: 'depute-adresse',
+  name: 'DeputeAdresse',
   props: {
+    // eslint-disable-next-line
     adresse: Object
   }
 }

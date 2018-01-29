@@ -23,14 +23,16 @@
       </li>
     </ul>
     <h2>Adresses</h2>
-    <depute-adresse v-for="adresse in deputeInfo.adresses" v-bind:adresse="adresse" v-bind:key="adresse.intitule"></depute-adresse>
+    <DeputeAdresse
+      v-for="adresse in deputeInfo.adresses"
+      :adresse="adresse"
+      :key="adresse.intitule"/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import DeputeAdresse from './DeputeAdresses.vue'
-import * as moment from 'moment'
 
 export default {
   components: {DeputeAdresse},

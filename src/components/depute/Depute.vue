@@ -56,11 +56,6 @@ export default {
           this.errors.push(e)
         })
     }
-  },
-  filters: {
-    formatDate (date) {
-
-    }
   }
 }
 </script>

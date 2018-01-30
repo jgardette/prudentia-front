@@ -33,6 +33,8 @@
 <script>
 import axios from 'axios'
 import DeputeAdresse from './DeputeAdresses.vue'
+// eslint-disable-next-line
+import formatDate from '../filters/FormatDateFilter'
 
 export default {
   components: {DeputeAdresse},

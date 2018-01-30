@@ -101,7 +101,8 @@ export default {
   },
   methods: {
     getDeputeList () {
-      axios.get(`http://localhost:8080/deputes_simple`)
+      const url = process.env.URL_HOST + ':' + process.env.URL_PORT + '/deputes_simple/'
+      axios.get(url)
         .then(response => {
           // JSON responses are automatically parsed.
           this.deputeList = response.data

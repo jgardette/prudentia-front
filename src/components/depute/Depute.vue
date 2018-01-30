@@ -49,7 +49,8 @@ export default {
   methods: {
     getDepute () {
       const DeputeCode = this.$route.params.code
-      axios.get(`http://localhost:8080/depute/${DeputeCode}`)
+      const url = process.env.URL_HOST + ':' + process.env.URL_PORT + '/depute/' + DeputeCode
+      axios.get(url)
         .then(response => {
           // JSON responses are automatically parsed.
           this.deputeInfo = response.data

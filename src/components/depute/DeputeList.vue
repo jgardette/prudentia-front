@@ -4,7 +4,7 @@
       <!-- User Interface controls -->
       <b-row>
         <b-col
-          md="6"
+          md="4"
           class="my-1">
           <b-form-group
             horizontal
@@ -19,9 +19,11 @@
                   :disabled="!filter"
                   @click="filter = ''">Vider</b-btn>
               </b-input-group-button>
-              <span><i>Nombre d'éléments : {{ totalRows }}</i></span>
             </b-input-group>
           </b-form-group>
+        </b-col>
+        <b-col>
+          <i>Nombre d'éléments : {{ totalRows }}</i>
         </b-col>
       </b-row>
     </b-container>
@@ -120,21 +122,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
-</style>

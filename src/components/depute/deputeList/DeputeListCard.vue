@@ -35,8 +35,8 @@
 
 <script>
 // eslint-disable-next-line
-import formatDate from '../filters/FormatDateFilter'
-import DeputeAdresse from './DeputeAdresses.vue'
+import formatDate from '../../filters/FormatDateFilter'
+const DeputeAdresse = () => import('./DeputeAdresses.vue')
 
 export default {
   components: {DeputeAdresse},

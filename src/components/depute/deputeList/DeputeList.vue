@@ -26,7 +26,7 @@
 <script>
 import axios from 'axios'
 // eslint-disable-next-line
-import formatDate from '../filters/FormatDateFilter'
+import formatDate from '../../filters/FormatDateFilter'
 import DeputeListCard from './DeputeListCard.vue'
 
 export default {

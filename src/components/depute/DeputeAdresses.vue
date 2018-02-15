@@ -1,21 +1,8 @@
 <template>
   <div class="DeputeAdresse">
-    <h3 v-if="adresse.intitule">{{ adresse.intitule }}</h3>
-    <ul>
-      <li v-if="adresse.nomRue">
-        Adresse : {{ adresse.numeroRue }} {{ adresse.nomRue }} {{ adresse.codePostal }} {{ adresse.ville }}
-      </li>
-    </ul>
-    <ul>
-      <li v-if="adresse.valeurElectronique">
-        Email : {{ adresse.valeurElectronique }}
-      </li>
-    </ul>
-    <ul>
-      <li v-if="adresse.numeroTelephone">
-        Numéro de téléphone : {{ adresse.numeroTelephone }}
-      </li>
-    </ul>
+    <p v-if="adresse.nomRue"><i>{{ adresse.intitule }}</i> {{ adresse.numeroRue }} {{ adresse.nomRue }} {{ adresse.codePostal }} {{ adresse.ville }}</p>
+    <p v-if="adresse.valeurElectronique">{{ adresse.valeurElectronique }}</p>
+    <p v-if="adresse.numeroTelephone">{{ adresse.numeroTelephone }}</p>
   </div>
 </template>
 

@@ -1,6 +1,15 @@
 # prudentia-front
 
-> A Vue.js project
+> Prudentia a pour objectif de rendre lisible et accessible les données "open data" de l'assemblée nationale. 
+
+
+## Prudentia et Prudentia-front
+Il existe 2 projets github :
+
+Prudentia (https://github.com/jgardette/prudentia) : Ce projet est la partie "back" qui a pour but de parser les fichiers de données et d'exposer les API
+
+Prudentia-front (https://github.com/jgardette/prudentia-front) : Ce projet est la partie "front" et appel les API du back pour ensuite afficher les résultats
+
 
 ## Build Setup
 

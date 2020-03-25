@@ -1,34 +1,42 @@
 <template>
   <div>
     <b-card
-      :title="deputecard.civilite + ' ' + deputecard.prenom + ' ' + deputecard.nom"
-      :sub-title="deputecard.dateNaissance | formatDate"
-      :img-src="'http://www2.assemblee-nationale.fr/static/tribun/15/photos/' + deputecard.uid.replace('PA', '') + '.jpg'"
-      img-alt="Image"
-      img-top
+      no-body
       tag="article"
-      style="max-width: 18rem;"
+      border-variant="dark"
+      :header="deputecard.civilite + ' ' + deputecard.prenom + ' ' + deputecard.nom"
+      style="max-width: 450px; min-width: 450px"
       class="mb-2">
-      <b-card-body>
-        <p class="card-text">
-          <strong>Profession</strong>
-        </p>
-        <p class="card-text">
-          {{ deputecard.catSocPro }}
-        </p>
-        <p class="card-text">
-          {{ deputecard.professionLibelle }}
-        </p>
-      </b-card-body>
-      <b-card-body>
-        <p class="card-text">
-          <strong>Adresse</strong>
-        </p>
-        <DeputeAdresse
-          v-for="adresse in deputecard.adresses"
-          :adresse="adresse"
-          :key="adresse.index"/>
-      </b-card-body>
+      <b-row no-gutters>
+        <b-col md="3">
+          <b-card-img
+            :src="'http://www2.assemblee-nationale.fr/static/tribun/15/photos/' + deputecard.uid.replace('PA', '') + '.jpg'"
+            class="rounded-0"/>
+        </b-col>
+        <b-col md="9">
+          <b-card-body
+            :title="deputecard.civilite + ' ' + deputecard.prenom + ' ' + deputecard.nom"
+            :sub-title="deputecard.dateNaissance | formatDate">
+            <b-card-text>
+              <p class="card-text">
+                {{ deputecard.catSocPro }}
+              </p>
+              <p class="card-text">
+                {{ deputecard.professionLibelle }}
+              </p>
+              <!-- Comments
+              <p class="card-text">
+                <strong>Adresse</strong>
+              </p>
+              <DeputeAdresse
+                v-for="adresse in deputecard.adresses"
+                :adresse="adresse"
+                :key="adresse.index"/>
+                -->
+            </b-card-text>
+          </b-card-body>
+        </b-col>
+      </b-row>
     </b-card>
   </div>
 </template>

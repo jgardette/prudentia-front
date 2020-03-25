@@ -1,8 +1,18 @@
 <template>
   <div>
     <b-container fluid>
+      <div
+        class="text-center">
+        <b-spinner
+          v-if="spinnerVisible"
+          variant="primary"
+          style="width:3rem; height:3rem;"
+          label="Large Spinner"/>
+      </div>
       <!-- User Interface controls -->
-      <b-row>
+      <b-row
+        v-if="!spinnerVisible"
+      >
         <b-col>
           <i>Nombre d'éléments : {{ totalRows }}</i>
         </b-col>
@@ -38,7 +48,8 @@ export default {
     return {
       deputeList: this.getDeputeList(),
       filter: null,
-      totalRows: 0
+      totalRows: 0,
+      spinnerVisible: true
     }
   },
   methods: {
@@ -48,6 +59,8 @@ export default {
         .then(response => {
           // JSON responses are automatically parsed.
           this.deputeList = response.data
+          this.totalRows = this.deputeList.length
+          this.spinnerVisible = false
         })
         .catch(e => {
           this.errors.push(e)

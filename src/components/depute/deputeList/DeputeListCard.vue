@@ -24,15 +24,9 @@
               <p class="card-text">
                 {{ deputecard.professionLibelle }}
               </p>
-              <!-- Comments
               <p class="card-text">
-                <strong>Adresse</strong>
+                Nombre de mandats : {{ deputecard.numberMandats }}
               </p>
-              <DeputeAdresse
-                v-for="adresse in deputecard.adresses"
-                :adresse="adresse"
-                :key="adresse.index"/>
-                -->
             </b-card-text>
           </b-card-body>
         </b-col>
